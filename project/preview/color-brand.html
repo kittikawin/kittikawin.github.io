@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg-1);font-family:var(--font-body);}
+  .wrap{padding:20px 24px;box-sizing:border-box;}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .sw{width:86px;height:86px;border-radius:8px;border:1px solid var(--border-1);
+      display:flex;flex-direction:column;justify-content:flex-end;padding:6px 8px;
+      font-family:var(--font-mono);font-size:9.5px;font-weight:500}
+  .sw .n{color:rgba(255,255,255,.92)}.sw .h{color:rgba(255,255,255,.65)}
+  .sw.l .n{color:var(--fg-1)}.sw.l .h{color:var(--fg-3)}
+  .lbl{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;
+       letter-spacing:.12em;color:var(--fg-3);margin:0 0 8px}
+</style></head><body><div class="wrap">
+  <p class="lbl">Primary accent · Ink Blue</p>
+  <div class="row">
+    <div class="sw" style="background:#1E40AF"><span class="n">accent</span><span class="h">#1E40AF</span></div>
+    <div class="sw" style="background:#1E3A8A"><span class="n">accent-hover</span><span class="h">#1E3A8A</span></div>
+    <div class="sw" style="background:#0B1F5C"><span class="n">accent-ink</span><span class="h">#0B1F5C</span></div>
+    <div class="sw l" style="background:#E0E7FF"><span class="n">accent-soft</span><span class="h">#E0E7FF</span></div>
+  </div>
+  <p class="lbl" style="margin-top:14px">Highlight · Warm Amber</p>
+  <div class="row">
+    <div class="sw" style="background:#D97706"><span class="n">highlight</span><span class="h">#D97706</span></div>
+    <div class="sw l" style="background:#FEF3C7"><span class="n">highlight-soft</span><span class="h">#FEF3C7</span></div>
+  </div>
+</div></body></html>

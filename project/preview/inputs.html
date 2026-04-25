@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg-1)}
+  .wrap{padding:20px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px;max-width:380px}
+  label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;
+    letter-spacing:.12em;color:var(--fg-3);display:block;margin-bottom:6px}
+  .input{width:100%;font-family:var(--font-body);font-size:15px;color:var(--fg-1);
+    background:var(--paper-0);border:1px solid var(--border-2);border-radius:8px;
+    padding:10px 12px;box-sizing:border-box;outline:none;
+    transition:border-color 120ms}
+  .input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .row{display:flex;gap:8px}
+  .row .input{flex:1}
+  .btn{background:var(--accent);color:#fff;border:0;border-radius:8px;
+    padding:0 16px;font-family:var(--font-body);font-weight:500;cursor:pointer}
+</style></head><body><div class="wrap">
+  <div><label>Your email</label>
+    <div class="row">
+      <input class="input" placeholder="you@domain.com" value="ball@example.com">
+      <button class="btn">Subscribe</button>
+    </div></div>
+  <div><label>Search posts</label>
+    <input class="input" placeholder="e.g. outbox pattern">
+  </div>
+</div></body></html>

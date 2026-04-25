@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg-1)}
+  .wrap{padding:20px 24px;box-sizing:border-box;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .tag{font-family:var(--font-mono);font-size:11px;font-weight:500;
+    padding:4px 10px;border-radius:999px;letter-spacing:.06em}
+  .tag.amber{background:var(--highlight-soft);color:#7A3E05}
+  .tag.blue{background:var(--accent-soft);color:var(--accent-ink)}
+  .tag.ink{background:var(--paper-2);color:var(--fg-1);border:1px solid var(--border-1)}
+  .tag.dot{display:inline-flex;align-items:center;gap:6px}
+  .tag.dot::before{content:"";width:6px;height:6px;border-radius:999px;background:#15803D;
+    box-shadow:0 0 0 3px rgba(21,128,61,.18)}
+</style></head><body><div class="wrap">
+  <span class="tag amber">.NET</span>
+  <span class="tag amber">C#</span>
+  <span class="tag blue">Architecture</span>
+  <span class="tag ink">Refactoring</span>
+  <span class="tag ink">Secrets</span>
+  <span class="tag dot ink">NOW · writing</span>
+</div></body></html>

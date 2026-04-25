@@ -1,0 +1,32 @@
+<!-- Shared CSS include for all preview cards -->
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg-1); }
+  .card-root {
+    box-sizing: border-box;
+    padding: 20px 24px;
+    min-height: 100%;
+    background: var(--bg-1);
+  }
+  .card-root * { box-sizing: border-box; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .col { display: flex; flex-direction: column; gap: 8px; }
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--fg-3);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .swatch {
+    width: 68px; height: 68px; border-radius: 8px; border: 1px solid var(--border-1);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 6px 8px; font-family: var(--font-mono); font-size: 9.5px;
+    font-weight: 500;
+  }
+  .swatch .name { color: rgba(255,255,255,0.92); }
+  .swatch .hex  { color: rgba(255,255,255,0.72); }
+  .swatch.on-light .name { color: var(--fg-1); }
+  .swatch.on-light .hex  { color: var(--fg-3); }
+</style>

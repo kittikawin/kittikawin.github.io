@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    
+  </defs>
+  <rect class="bg" width="120" height="120" rx="14"></rect>
+  <rect class="rule" x="18" y="34" width="36" height="2"></rect>
+  <text class="serif" x="18" y="72" font-size="44" letter-spacing="-2">kb</text>
+  <text class="mono" x="18" y="96" font-size="9" letter-spacing="1.4">KITTIKAWIN.BALL</text>
+</svg>
