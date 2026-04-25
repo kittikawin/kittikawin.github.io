@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kittikawin · Writing on .NET, architecture</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Kittikawin Leasean — Thai .NET developer writing practical essays on patterns, refactors, and architecture.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="posts.js"></script>
+  <script type="text/babel" src="components/SiteHeader.jsx"></script>
+  <script type="text/babel" src="components/SiteFooter.jsx"></script>
+  <script type="text/babel" src="components/Hero.jsx"></script>
+  <script type="text/babel" src="components/PostList.jsx"></script>
+  <script type="text/babel" src="components/PostView.jsx"></script>
+  <script type="text/babel" src="components/AboutPages.jsx"></script>
+
+  <script type="text/babel">
+    function App() {
+      const [route, setRoute] = React.useState('home');
+      const [openPost, setOpenPost] = React.useState(null);
+      const scrollRef = React.useRef(null);
+
+      React.useEffect(() => {
+        try {
+          const s = JSON.parse(localStorage.getItem('kb_route') || 'null');
+          if (s) { setRoute(s.route || 'home'); setOpenPost(s.openPost || null); }
+        } catch {}
+      }, []);
+
+      React.useEffect(() => {
+        localStorage.setItem('kb_route', JSON.stringify({ route, openPost }));
+        if (scrollRef.current) scrollRef.current.scrollTop = 0;
+      }, [route, openPost]);
+
+      const handleOpenPost = (p) => { setOpenPost(p); setRoute('post'); };
+      const handleBack = () => { setOpenPost(null); setRoute('writing'); };
+
+      let content;
+      if (route === 'home') {
+        content = (
+          <main className="kb-page" data-screen-label="01 Home">
+            <Hero onReadWriting={() => setRoute('writing')} />
+            <section className="kb-section">
+              <div className="kb-section-head">
+                <h2>Recent writing</h2>
+                <a href="#" onClick={(e) => { e.preventDefault(); setRoute('writing'); }}>See all ➡️</a>
+              </div>
+              <PostList posts={window.POSTS} onOpen={handleOpenPost} limit={3} />
+            </section>
+          </main>
+        );
+      } else if (route === 'writing') {
+        content = (
+          <main className="kb-page" data-screen-label="02 Writing">
+            <div className="kb-section-head" style={{marginTop: 0}}>
+              <h2>Writing · all posts</h2>
+              <a href="https://medium.com/@kittikawin_ball">More on Medium ➡️</a>
+            </div>
+            <PostList posts={window.POSTS} onOpen={handleOpenPost} paginate pageSize={5} />
+          </main>
+        );
+      } else if (route === 'post' && openPost) {
+        content = (
+          <main className="kb-page" data-screen-label="03 Post">
+            <PostView post={openPost} onBack={handleBack} />
+          </main>
+        );
+      } else if (route === 'about') {
+        content = (
+          <main className="kb-page" data-screen-label="04 About">
+            <AboutPage />
+          </main>
+        );
+      } else if (route === 'now') {
+        content = (
+          <main className="kb-page" data-screen-label="05 Now">
+            <NowPage />
+          </main>
+        );
+      }
+
+      return (
+        <div className="kb-scroll" ref={scrollRef}>
+          <SiteHeader route={route} setRoute={(r) => { setRoute(r); setOpenPost(null); }} />
+          {content}
+          <SiteFooter />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

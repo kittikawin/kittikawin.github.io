@@ -1,0 +1,239 @@
+/* =========================================================
+   Kittikawin Design System — Foundations
+   Colors + Type tokens for "Ball" / kittikawin.github.io
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* -------- Brand / Accent --------
+     A deep ink-blue accent nods to .NET/Azure heritage without
+     being corporate purple. Warm paper neutrals keep it editorial. */
+  --accent:            #1E40AF;       /* primary accent (ink blue)   */
+  --accent-hover:      #1E3A8A;       /* darker on hover             */
+  --accent-soft:       #E0E7FF;       /* tinted surface              */
+  --accent-ink:        #0B1F5C;       /* deep accent for headings    */
+
+  /* Secondary accent — used sparingly for tags, highlights */
+  --highlight:         #D97706;       /* warm amber (Thai sun)       */
+  --highlight-soft:    #FEF3C7;
+
+  /* -------- Neutral paper scale --------
+     Slightly warm, newsprint-y. Avoids cold blue-greys. */
+  --paper-0:           #FFFFFF;       /* pure white                  */
+  --paper-1:           #FBFAF7;       /* page background (warm)      */
+  --paper-2:           #F4F2EC;       /* card / subtle fill          */
+  --paper-3:           #E8E4DA;       /* divider / hairline          */
+  --paper-4:           #C7C1B3;       /* muted rule                  */
+
+  --ink-1:             #111111;       /* primary text                */
+  --ink-2:             #3A3A36;       /* body text                   */
+  --ink-3:             #6B6B64;       /* secondary / meta            */
+  --ink-4:             #9A998F;       /* tertiary / captions         */
+
+  /* -------- Semantic colors -------- */
+  --fg-1: var(--ink-1);
+  --fg-2: var(--ink-2);
+  --fg-3: var(--ink-3);
+  --fg-4: var(--ink-4);
+
+  --bg-1: var(--paper-1);
+  --bg-2: var(--paper-2);
+  --bg-3: var(--paper-3);
+
+  --border-1:          rgba(17, 17, 17, 0.08);
+  --border-2:          rgba(17, 17, 17, 0.14);
+  --border-strong:     rgba(17, 17, 17, 0.85);
+
+  --link:              var(--accent);
+  --link-hover:        var(--accent-hover);
+  --link-visited:      #4C3A94;
+
+  --success:           #15803D;
+  --warning:           #B45309;
+  --danger:            #B91C1C;
+
+  --code-bg:           #0E1116;       /* code block bg (ink)         */
+  --code-fg:           #E6E6E3;       /* code block text             */
+  --code-inline-bg:    #F1EEE6;       /* inline code bg              */
+  --code-inline-fg:    #0B1F5C;       /* inline code text            */
+  --code-keyword:      #C586C0;       /* .NET/C# purple keywords     */
+  --code-string:       #CE9178;
+  --code-number:       #B5CEA8;
+  --code-comment:      #7C7C74;
+  --code-type:         #4EC9B0;
+
+  /* -------- Dark mode tokens (optional) -------- */
+  --dark-bg-1:         #0E1116;
+  --dark-bg-2:         #161A21;
+  --dark-fg-1:         #F4F2EC;
+  --dark-fg-2:         #C7C1B3;
+
+  /* -------- Type families -------- */
+  --font-display: 'Fraunces', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-thai:    'Inter', 'IBM Plex Sans Thai', 'Sarabun', system-ui, sans-serif;
+
+  /* -------- Type scale (modular, 1.25 minor third) -------- */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  32px;
+  --text-3xl:  42px;
+  --text-4xl:  56px;
+  --text-5xl:  76px;
+
+  --leading-tight:  1.15;
+  --leading-snug:   1.3;
+  --leading-normal: 1.55;
+  --leading-loose:  1.75;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.06em;
+  --tracking-caps:   0.14em;
+
+  /* -------- Spacing scale (4px base) -------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* -------- Radii -------- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  14px;
+  --radius-xl:  22px;
+  --radius-pill: 999px;
+
+  /* -------- Shadows (soft, paper-like) -------- */
+  --shadow-xs:  0 1px 0 rgba(17,17,17,0.04);
+  --shadow-sm:  0 1px 2px rgba(17,17,17,0.06), 0 1px 1px rgba(17,17,17,0.04);
+  --shadow-md:  0 4px 12px rgba(17,17,17,0.08), 0 2px 4px rgba(17,17,17,0.04);
+  --shadow-lg:  0 18px 40px -12px rgba(17,17,17,0.18), 0 4px 10px rgba(17,17,17,0.06);
+  --shadow-ink: 4px 4px 0 rgba(17,17,17,0.9); /* hard ink shadow, editorial */
+
+  /* -------- Layout -------- */
+  --measure-narrow: 58ch;   /* long-form reading width */
+  --measure-wide:   72ch;
+  --content-max:    1080px; /* page content */
+  --gutter:         32px;
+
+  /* -------- Motion -------- */
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-emphasis: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast:   120ms;
+  --dur-base:   200ms;
+  --dur-slow:   360ms;
+}
+
+/* =========================================================
+   Semantic element styles
+   ========================================================= */
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  font-size:   var(--text-base);
+  line-height: var(--leading-normal);
+  color:       var(--fg-2);
+  background:  var(--bg-1);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--fg-1);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+  margin: 0;
+}
+
+h1 { font-size: var(--text-4xl); font-weight: 600; }
+h2 { font-size: var(--text-2xl); font-weight: 600; }
+h3 { font-size: var(--text-xl);  font-weight: 600; }
+h4 { font-size: var(--text-lg);  font-weight: 600; }
+h5 { font-size: var(--text-md);  font-weight: 600; letter-spacing: var(--tracking-normal); }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--fg-3);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+
+p {
+  margin: 0 0 1em;
+  max-width: var(--measure-narrow);
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+a:hover  { color: var(--link-hover); }
+a:visited { color: var(--link-visited); }
+
+strong, b { font-weight: 600; color: var(--fg-1); }
+em        { font-style: italic; }
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+:not(pre) > code {
+  background: var(--code-inline-bg);
+  color: var(--code-inline-fg);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-1);
+}
+
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  line-height: var(--leading-snug);
+  font-size: var(--text-sm);
+}
+
+blockquote {
+  border-left: 2px solid var(--border-strong);
+  margin: 0;
+  padding: 2px 0 2px var(--space-5);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--fg-1);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-1);
+  margin: var(--space-7) 0;
+}
+
+::selection { background: var(--accent-soft); color: var(--accent-ink); }
